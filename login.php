@@ -12,5 +12,4 @@
         echo $email;
     ?>
 </body>
-
 </html>
