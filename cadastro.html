@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <center>
+        <div id="mae">
+
+            <div id="cabecalho">
+
+                <div id="logo">
+
+                    <a href="home.html"><img src="fotos/aleka.png" width="120" height="120"></a>
+
+                </div>
+
+                <div id="botoes">
+
+                    <a href="home.html"><button type="button" class="btn btn-outline-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></a>
+
+                    <a href="cadastro.html"><button type="button" class="btn btn-outline-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></a>
+
+                    <a href=""><button type="button" class="btn btn-outline-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Produtos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+
+                    <a href="des.html"><button type="button" class="btn btn-outline-secondary"> Desenvolvimento</button></a>
+
+                    <a href=""><button type="button" class="btn btn-outline-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outros&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+
+
+                </div>
+                <div id="icones">
+                    <br>
+                    <button class="open-button" onclick="openForm()">
+                        <div id="login"><img src="fotos/login.png" width="50" height="50"></div>
+                    </button>
+                    <div id="carrinho"><img src="fotos/carrinho.png" width="50" height="50"></div>
+
+                </div>
+            </div>
+            <div id="space">
+
+            </div>
+            <div class="fundo">
+                <div id="cadastro">
+                    <form name="cadastro" action="cadastro.php" method="post">
+                        <div class="form-row">
+                            <br>
+
+                            <label for="inputAddress">Nome de usuário</label>
+                            <input type="text" name="nome" class="form-control" id="inputAddress" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode>=65 && event.charCode<=90 || event.charCode>=97 && event.charCode<=122" required>
+
+                            <br>
+
+                            <label for="inputAddress2">Telefone</label>
+                            <input type="text" name="telefone" class="form-control" id="inputAddress2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="11" required>
+
+                            <br>
+
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" name="email" class="form-control" id="inputEmail4" onchange="confirma_email()" required>
+
+                            <br>
+
+                            <label for="inputEmail4">Confirmar Email</label>
+                            <input type="email" name="conf_email" class="form-control" id="inputEmail4" onchange="confirma_email()" required>
+
+                            <br>
+
+                            <label for="inputPassword4">Senha</label>
+                            <input type="password" name="senha" class="form-control" id="inputPassword4" onchange="confirma_senha()" minlength="8" required>
+
+                            <br>
+
+                            <label for="inputPassword4">Confirmar Senha</label>
+                            <input type="password" name="conf_senha" class="form-control" id="inputPassword4" onchange="confirma_senha()" required>
+
+                            <script>
+                                function confirma_senha() {
+                                    let senha = document.cadastro.senha;
+                                    let senha_2 = document.cadastro.conf_senha;
+
+                                    if (senha.value == senha_2.value) {
+                                        senha_2.setCustomValidity('')
+
+                                    } else {
+                                        senha_2.setCustomValidity('As senhas estão diferentes...')
+                                    }
+                                }
+
+                                function confirma_email() {
+                                    let email = document.cadastro.email;
+                                    let email_2 = document.cadastro.conf_email;
+
+                                    if (email.value == email_2.value) {
+                                        email_2.setCustomValidity('')
+                                    } else {
+                                        email_2.setCustomValidity('Os emails estão diferentes...')
+
+                                    }
+                                }
+
+                            </script>
+
+                            <br><br>
+
+                            <button type="submit" class="btn btn-secondary">Cadastrar</button>&nbsp;
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="space">
+
+            </div>
+            <div id="rodape">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+
+                    <a href="home.html"><button type="button" class="btn btn-secondary">Home</button></a>
+
+                    <a href="cadastro.html"><button type="button" class="btn btn-secondary">Cadastro</button></a>
+
+                    <a href=""><button type="button" class="btn btn-secondary">Produtos</button></a>
+
+                    <a href="des.html"><button type="button" class="btn btn-secondary">Desenvolvimento</button></a>
+
+                    <a href=""><button type="button" class="btn btn-secondary">Outros</button></a>
+
+                </div>
+
+                <br><br>
+
+                <a href="#top"><button type="button" class="btn btn-secondary">Voltar ao topo ↑ </button></a>
+
+                <br><br>
+
+                Amanda, nº2 - Ana Julia, nº3 <br>
+                Eduardo, nº7 - Kaio, nº20 <br>
+                Luiz, nº24
+
+                <!-- JAVASCRIPT -->
+                <script>
+                    function openForm() {
+                        document.getElementById("myForm").style.display = "block";
+                    }
+
+                    function closeForm() {
+                        document.getElementById("myForm").style.display = "none";
+                    }
+
+                </script>
+
+
+
+                <div class="form-popup" id="myForm">
+                    <form method="post" action="login.php" class="form-container">
+                        <h1>Login</h1>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <a href=""><br>Esqueci minha senha</a>
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se!</a>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
